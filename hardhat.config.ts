@@ -37,6 +37,8 @@ const config: HardhatUserConfig = {
             },
         ],
         overrides: {
+            'contracts/core/YieldContracts/PendleYieldContractFactoryHydra.sol': viaIR('0.8.30', 10),
+            'contracts/core/Market/PendleMarketFactoryHydra.sol': viaIR('0.8.30', 10),
             'contracts/router/ActionAddRemoveLiqV3.sol': viaIR('0.8.30', 9500),
             'contracts/router/ActionMiscV3.sol': viaIR('0.8.30', 1000000),
             'contracts/router/ActionSimple.sol': viaIR('0.8.30', 1000000),
