@@ -23,8 +23,14 @@
     "node": ">=10"
   },
   "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.6",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.8",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@typechain/ethers-v5": "^9.0.0",
     "@typechain/hardhat": "^4.0.0",
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "chai": "^4.3.7",
     "hardhat": "^2.19.2",
     "hardhat-contract-sizer": "^2.10.0",
     "solc": "^0.8.23-fixed",
@@ -35,6 +41,8 @@
   },
   "scripts": {
     "compile": "yarn hardhat compile",
+    "test": "yarn hardhat test",
+    "test:vectors": "yarn hardhat test test/MathVectors.test.ts",
     "size": "yarn hardhat size-contracts",
     "clean": "yarn hardhat clean",
     "fcompile": "yarn clean && yarn compile",

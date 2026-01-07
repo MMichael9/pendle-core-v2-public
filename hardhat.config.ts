@@ -1,4 +1,6 @@
 import '@typechain/hardhat';
+import '@nomiclabs/hardhat-ethers';
+import '@nomicfoundation/hardhat-chai-matchers';
 import 'hardhat-contract-sizer';
 import { HardhatUserConfig } from 'hardhat/types';
 
@@ -37,6 +39,7 @@ const config: HardhatUserConfig = {
             },
         ],
         overrides: {
+            'contracts/test/MathVectorHarness.sol': viaIR('0.8.30', 1000),
             'contracts/core/YieldContracts/PendleYieldContractFactoryHydra.sol': viaIR('0.8.30', 10),
             'contracts/core/Market/PendleMarketFactoryHydra.sol': viaIR('0.8.30', 10),
             'contracts/router/ActionAddRemoveLiqV3.sol': viaIR('0.8.30', 9500),

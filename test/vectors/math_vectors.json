@@ -1,0 +1,3388 @@
+[
+  {
+    "function": "constants",
+    "inputs": {},
+    "output": {
+      "ONE": "1000000000000000000",
+      "IONE": "1000000000000000000",
+      "MAX_NATURAL_EXPONENT": "130000000000000000000",
+      "MIN_NATURAL_EXPONENT": "-41000000000000000000",
+      "LN_36_LOWER_BOUND": "900000000000000000",
+      "LN_36_UPPER_BOUND": "1100000000000000000",
+      "IMPLIED_RATE_TIME": "31536000",
+      "MAX_MARKET_PROPORTION": "960000000000000000",
+      "MINIMUM_LIQUIDITY": "1000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "0"
+    },
+    "output": "1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "130000000000000000000"
+    },
+    "output": "287264955081783193326519143742863858051506000000000000000000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "129999999999999999999"
+    },
+    "output": "287264955081783192478609940395442668438324000000000000000000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "-41000000000000000000"
+    },
+    "output": "1",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "-40999999999999999999"
+    },
+    "output": "1",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "1"
+    },
+    "output": "1000000000000000001",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "1000000000000"
+    },
+    "output": "1000001000000500000",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "1000000000000000"
+    },
+    "output": "1001000500166708341",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "100000000000000000"
+    },
+    "output": "1105170918075647624",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "250000000000000000"
+    },
+    "output": "1284025416687741484",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "500000000000000000"
+    },
+    "output": "1648721270700128146",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "1000000000000000000"
+    },
+    "output": "2718281828459045235",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "2000000000000000000"
+    },
+    "output": "7389056098930650227",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "5000000000000000000"
+    },
+    "output": "148413159102576603421",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "10000000000000000000"
+    },
+    "output": "22026465794806716516930",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "-1"
+    },
+    "output": "999999999999999999",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "-1000000000000"
+    },
+    "output": "999999000000499999",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "-100000000000000000"
+    },
+    "output": "904837418035959573",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "-500000000000000000"
+    },
+    "output": "606530659712633423",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "-1000000000000000000"
+    },
+    "output": "367879441171442321",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "-2000000000000000000"
+    },
+    "output": "135335283236612691",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "-5000000000000000000"
+    },
+    "output": "6737946999085467",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "-10000000000000000000"
+    },
+    "output": "45399929762484",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "-20000000000000000000"
+    },
+    "output": "2061153622",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "-30000000000000000000"
+    },
+    "output": "93576",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "-40000000000000000000"
+    },
+    "output": "4",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "6250000000000000000"
+    },
+    "output": "518012824668342025938",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "12500000000000000000"
+    },
+    "output": "268337286520874456956325",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "25000000000000000000"
+    },
+    "output": "72004899337385872524042467984",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "50000000000000000000"
+    },
+    "output": "5184705528587072464086832181171936561238",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "100000000000000000000"
+    },
+    "output": "26881171418161354484131967259153438289195652545281114830700000",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "64000000000000000000"
+    },
+    "output": "6235149080811616882910000000000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "128000000000000000000"
+    },
+    "output": "38877084059945950922200000000000000000000000000000000000000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "9950330853168082"
+    },
+    "output": "1009999999999999999",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "48790164169432003"
+    },
+    "output": "1049999999999999999",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "95310179804324859"
+    },
+    "output": "1099999999999999998",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "39399837653746832"
+    },
+    "output": "1040186306165985469",
+    "reverts": false
+  },
+  {
+    "function": "exp",
+    "inputs": {
+      "x": "1998002662673056"
+    },
+    "output": "1001999999999999999",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "1000000000000000000"
+    },
+    "output": "0",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "1001000000000000000"
+    },
+    "output": "999500333083533",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "999000000000000000"
+    },
+    "output": "-1000500333583533",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "1010000000000000000"
+    },
+    "output": "9950330853168082",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "990000000000000000"
+    },
+    "output": "-10050335853501441",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "1090000000000000000"
+    },
+    "output": "86177696241052332",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "910000000000000000"
+    },
+    "output": "-94310679471241326",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "1100000000000000000"
+    },
+    "output": "95310179804324859",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "900000000000000000"
+    },
+    "output": "-105360515657826301",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "1200000000000000000"
+    },
+    "output": "182321556793954626",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "1500000000000000000"
+    },
+    "output": "405465108108164381",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "2000000000000000000"
+    },
+    "output": "693147180559945309",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "2718281828459045235"
+    },
+    "output": "999999999999999999",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "3000000000000000000"
+    },
+    "output": "1098612288668109691",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "5000000000000000000"
+    },
+    "output": "1609437912434100374",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "10000000000000000000"
+    },
+    "output": "2302585092994045683",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "100000000000000000000"
+    },
+    "output": "4605170185988091367",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "1000000000000000000000"
+    },
+    "output": "6907755278982137052",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "800000000000000000"
+    },
+    "output": "-223143551314209755",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "500000000000000000"
+    },
+    "output": "-693147180559945309",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "100000000000000000"
+    },
+    "output": "-2302585092994045683",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "10000000000000000"
+    },
+    "output": "-4605170185988091367",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "1"
+    },
+    "output": "-41446531673892822312",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "100"
+    },
+    "output": "-36841361487904730944",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "1000000000"
+    },
+    "output": "-20723265836946411156",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "1000000000000000"
+    },
+    "output": "-6907755278982137052",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "106449445891785942956"
+    },
+    "output": "4667670185988091367",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "113314845306682631683"
+    },
+    "output": "4730170185988091367",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "128402541668774148407"
+    },
+    "output": "4855170185988091367",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "164872127070012814685"
+    },
+    "output": "5105170185988091367",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "271828182845904523536"
+    },
+    "output": "5605170185988091367",
+    "reverts": false
+  },
+  {
+    "function": "ln",
+    "inputs": {
+      "a": "1040138669417921641"
+    },
+    "output": "39354040243600579",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "1000000000000000000",
+      "y": "1000000000000000000"
+    },
+    "output": "1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "2000000000000000000",
+      "y": "1000000000000000000"
+    },
+    "output": "1999999999999999998",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "2000000000000000000",
+      "y": "2000000000000000000"
+    },
+    "output": "3999999999999999996",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "2000000000000000000",
+      "y": "500000000000000000"
+    },
+    "output": "1414213562373095047",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "10000000000000000000",
+      "y": "500000000000000000"
+    },
+    "output": "3162277660168379328",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "1500000000000000000",
+      "y": "3000000000000000000"
+    },
+    "output": "3374999999999999988",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "2718281828459045235",
+      "y": "1000000000000000000"
+    },
+    "output": "2718281828459045227",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "2718281828459045235",
+      "y": "2000000000000000000"
+    },
+    "output": "7389056098930650198",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "4000000000000000000",
+      "y": "500000000000000000"
+    },
+    "output": "1999999999999999998",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "9000000000000000000",
+      "y": "500000000000000000"
+    },
+    "output": "2999999999999999998",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "100000000000000000000",
+      "y": "500000000000000000"
+    },
+    "output": "9999999999999999989",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "2000000000000000000",
+      "y": "10000000000000000000"
+    },
+    "output": "1023999999999999995648",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "1010000000000000000",
+      "y": "365000000000000000000"
+    },
+    "output": "37783434332887158852",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "500000000000000000",
+      "y": "1000000000000000000"
+    },
+    "output": "500000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "pow",
+    "inputs": {
+      "x": "500000000000000000",
+      "y": "2000000000000000000"
+    },
+    "output": "250000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "mulDown",
+    "inputs": {
+      "a": "1000000000000000000",
+      "b": "1000000000000000000"
+    },
+    "output": "1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "mulDown",
+    "inputs": {
+      "a": "2000000000000000000",
+      "b": "3000000000000000000"
+    },
+    "output": "6000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "mulDown",
+    "inputs": {
+      "a": "1",
+      "b": "1000000000000000000000000000000"
+    },
+    "output": "1000000000000",
+    "reverts": false
+  },
+  {
+    "function": "mulDown",
+    "inputs": {
+      "a": "3",
+      "b": "333333333333333333"
+    },
+    "output": "0",
+    "reverts": false
+  },
+  {
+    "function": "mulDown",
+    "inputs": {
+      "a": "340282366920938463463374607431768211455",
+      "b": "1000000000000000000"
+    },
+    "output": "340282366920938463463374607431768211455",
+    "reverts": false
+  },
+  {
+    "function": "mulDown",
+    "inputs": {
+      "a": "500000000000000000",
+      "b": "500000000000000000"
+    },
+    "output": "250000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "mulDown",
+    "inputs": {
+      "a": "1500000000000000000",
+      "b": "1500000000000000000"
+    },
+    "output": "2250000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "mulDownInt",
+    "inputs": {
+      "a": "1000000000000000000",
+      "b": "2000000000000000000"
+    },
+    "output": "2000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "mulDownInt",
+    "inputs": {
+      "a": "-1000000000000000000",
+      "b": "2000000000000000000"
+    },
+    "output": "-2000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "mulDownInt",
+    "inputs": {
+      "a": "1000000000000000000",
+      "b": "-2000000000000000000"
+    },
+    "output": "-2000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "mulDownInt",
+    "inputs": {
+      "a": "-1000000000000000000",
+      "b": "-2000000000000000000"
+    },
+    "output": "2000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "mulDownInt",
+    "inputs": {
+      "a": "-1",
+      "b": "1000000000000000000"
+    },
+    "output": "-1",
+    "reverts": false
+  },
+  {
+    "function": "divDown",
+    "inputs": {
+      "a": "1000000000000000000",
+      "b": "1000000000000000000"
+    },
+    "output": "1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "divDown",
+    "inputs": {
+      "a": "1000000000000000000",
+      "b": "2000000000000000000"
+    },
+    "output": "500000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "divDown",
+    "inputs": {
+      "a": "1000000000000000000",
+      "b": "3000000000000000000"
+    },
+    "output": "333333333333333333",
+    "reverts": false
+  },
+  {
+    "function": "divDown",
+    "inputs": {
+      "a": "2000000000000000000",
+      "b": "3000000000000000000"
+    },
+    "output": "666666666666666666",
+    "reverts": false
+  },
+  {
+    "function": "divDown",
+    "inputs": {
+      "a": "1",
+      "b": "3"
+    },
+    "output": "333333333333333333",
+    "reverts": false
+  },
+  {
+    "function": "divDown",
+    "inputs": {
+      "a": "1000000000000000000000000000000",
+      "b": "1000000000000000000"
+    },
+    "output": "1000000000000000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "divDown",
+    "inputs": {
+      "a": "1000000000000000000",
+      "b": "1500000000000000000"
+    },
+    "output": "666666666666666666",
+    "reverts": false
+  },
+  {
+    "function": "divDownInt",
+    "inputs": {
+      "a": "1000000000000000000",
+      "b": "2000000000000000000"
+    },
+    "output": "500000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "divDownInt",
+    "inputs": {
+      "a": "-1000000000000000000",
+      "b": "2000000000000000000"
+    },
+    "output": "-500000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "divDownInt",
+    "inputs": {
+      "a": "1000000000000000000",
+      "b": "-2000000000000000000"
+    },
+    "output": "-500000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "divDownInt",
+    "inputs": {
+      "a": "-1000000000000000000",
+      "b": "-2000000000000000000"
+    },
+    "output": "500000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "rawDivUp",
+    "inputs": {
+      "a": "10",
+      "b": "3"
+    },
+    "output": "4",
+    "reverts": false
+  },
+  {
+    "function": "rawDivUp",
+    "inputs": {
+      "a": "9",
+      "b": "3"
+    },
+    "output": "3",
+    "reverts": false
+  },
+  {
+    "function": "rawDivUp",
+    "inputs": {
+      "a": "1",
+      "b": "2"
+    },
+    "output": "1",
+    "reverts": false
+  },
+  {
+    "function": "rawDivUp",
+    "inputs": {
+      "a": "1",
+      "b": "1"
+    },
+    "output": "1",
+    "reverts": false
+  },
+  {
+    "function": "rawDivUp",
+    "inputs": {
+      "a": "0",
+      "b": "1"
+    },
+    "output": "0",
+    "reverts": false
+  },
+  {
+    "function": "rawDivUp",
+    "inputs": {
+      "a": "7",
+      "b": "3"
+    },
+    "output": "3",
+    "reverts": false
+  },
+  {
+    "function": "rawDivUp",
+    "inputs": {
+      "a": "100000000000000000001",
+      "b": "10000000000"
+    },
+    "output": "10000000001",
+    "reverts": false
+  },
+  {
+    "function": "rawDivUpInt",
+    "inputs": {
+      "a": "10",
+      "b": "3"
+    },
+    "output": "4",
+    "reverts": false
+  },
+  {
+    "function": "rawDivUpInt",
+    "inputs": {
+      "a": "-10",
+      "b": "3"
+    },
+    "output": "-2",
+    "reverts": false
+  },
+  {
+    "function": "rawDivUpInt",
+    "inputs": {
+      "a": "10",
+      "b": "-3"
+    },
+    "output": "-2",
+    "reverts": false
+  },
+  {
+    "function": "rawDivUpInt",
+    "inputs": {
+      "a": "-10",
+      "b": "-3"
+    },
+    "output": "4",
+    "reverts": false
+  },
+  {
+    "function": "sqrt",
+    "inputs": {
+      "y": "0"
+    },
+    "output": "0",
+    "reverts": false
+  },
+  {
+    "function": "sqrt",
+    "inputs": {
+      "y": "1"
+    },
+    "output": "1",
+    "reverts": false
+  },
+  {
+    "function": "sqrt",
+    "inputs": {
+      "y": "2"
+    },
+    "output": "1",
+    "reverts": false
+  },
+  {
+    "function": "sqrt",
+    "inputs": {
+      "y": "3"
+    },
+    "output": "1",
+    "reverts": false
+  },
+  {
+    "function": "sqrt",
+    "inputs": {
+      "y": "4"
+    },
+    "output": "2",
+    "reverts": false
+  },
+  {
+    "function": "sqrt",
+    "inputs": {
+      "y": "9"
+    },
+    "output": "3",
+    "reverts": false
+  },
+  {
+    "function": "sqrt",
+    "inputs": {
+      "y": "16"
+    },
+    "output": "4",
+    "reverts": false
+  },
+  {
+    "function": "sqrt",
+    "inputs": {
+      "y": "144"
+    },
+    "output": "12",
+    "reverts": false
+  },
+  {
+    "function": "sqrt",
+    "inputs": {
+      "y": "145"
+    },
+    "output": "12",
+    "reverts": false
+  },
+  {
+    "function": "sqrt",
+    "inputs": {
+      "y": "1000000000000000000"
+    },
+    "output": "1000000000",
+    "reverts": false
+  },
+  {
+    "function": "sqrt",
+    "inputs": {
+      "y": "1000000000000000000000000000000000000"
+    },
+    "output": "1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "sqrt",
+    "inputs": {
+      "y": "340282366920938463463374607431768211455"
+    },
+    "output": "18446744073709551615",
+    "reverts": false
+  },
+  {
+    "function": "sqrt",
+    "inputs": {
+      "y": "57896044618658097711785492504343953926634992332820282019728792003956564819967"
+    },
+    "output": "240615969168004511545033772477625056927",
+    "reverts": false
+  },
+  {
+    "function": "sqrt",
+    "inputs": {
+      "y": "100000000000000000000"
+    },
+    "output": "10000000000",
+    "reverts": false
+  },
+  {
+    "function": "subNoNeg",
+    "inputs": {
+      "a": "5000000000000000000",
+      "b": "3000000000000000000"
+    },
+    "output": "2000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "subNoNeg",
+    "inputs": {
+      "a": "3000000000000000000",
+      "b": "3000000000000000000"
+    },
+    "output": "0",
+    "reverts": false
+  },
+  {
+    "function": "subNoNeg",
+    "inputs": {
+      "a": "1000000000000000000",
+      "b": "1"
+    },
+    "output": "999999999999999999",
+    "reverts": false
+  },
+  {
+    "function": "abs",
+    "inputs": {
+      "x": "1000000000000000000"
+    },
+    "output": "1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "abs",
+    "inputs": {
+      "x": "-1000000000000000000"
+    },
+    "output": "1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "abs",
+    "inputs": {
+      "x": "0"
+    },
+    "output": "0",
+    "reverts": false
+  },
+  {
+    "function": "abs",
+    "inputs": {
+      "x": "-1000000000000000000000000000000"
+    },
+    "output": "1000000000000000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "neg",
+    "inputs": {
+      "x": "1000000000000000000"
+    },
+    "output": "-1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "neg",
+    "inputs": {
+      "x": "-1000000000000000000"
+    },
+    "output": "1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "neg",
+    "inputs": {
+      "x": "0"
+    },
+    "output": "0",
+    "reverts": false
+  },
+  {
+    "function": "toInt",
+    "inputs": {
+      "x": "0"
+    },
+    "output": "0",
+    "reverts": false
+  },
+  {
+    "function": "toInt",
+    "inputs": {
+      "x": "1000000000000000000"
+    },
+    "output": "1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "toInt",
+    "inputs": {
+      "x": "57896044618658097711785492504343953926634992332820282019728792003956564819967"
+    },
+    "output": "57896044618658097711785492504343953926634992332820282019728792003956564819967",
+    "reverts": false
+  },
+  {
+    "function": "toUint",
+    "inputs": {
+      "x": "0"
+    },
+    "output": "0",
+    "reverts": false
+  },
+  {
+    "function": "toUint",
+    "inputs": {
+      "x": "1000000000000000000"
+    },
+    "output": "1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "toUint",
+    "inputs": {
+      "x": "57896044618658097711785492504343953926634992332820282019728792003956564819967"
+    },
+    "output": "57896044618658097711785492504343953926634992332820282019728792003956564819967",
+    "reverts": false
+  },
+  {
+    "function": "syToAsset",
+    "inputs": {
+      "rate": "1000000000000000000",
+      "amount": "1000000000000000000"
+    },
+    "output": "1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "syToAssetUp",
+    "inputs": {
+      "rate": "1000000000000000000",
+      "amount": "1000000000000000000"
+    },
+    "output": "1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "syToAsset",
+    "inputs": {
+      "rate": "1050000000000000000",
+      "amount": "1000000000000000000"
+    },
+    "output": "1050000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "syToAssetUp",
+    "inputs": {
+      "rate": "1050000000000000000",
+      "amount": "1000000000000000000"
+    },
+    "output": "1050000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "syToAsset",
+    "inputs": {
+      "rate": "1100000000000000000",
+      "amount": "100000000000000000000"
+    },
+    "output": "110000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "syToAssetUp",
+    "inputs": {
+      "rate": "1100000000000000000",
+      "amount": "100000000000000000000"
+    },
+    "output": "110000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "syToAsset",
+    "inputs": {
+      "rate": "2000000000000000000",
+      "amount": "123456789000000000000000000"
+    },
+    "output": "246913578000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "syToAssetUp",
+    "inputs": {
+      "rate": "2000000000000000000",
+      "amount": "123456789000000000000000000"
+    },
+    "output": "246913578000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "syToAsset",
+    "inputs": {
+      "rate": "1050000000000000000",
+      "amount": "1"
+    },
+    "output": "1",
+    "reverts": false
+  },
+  {
+    "function": "syToAssetUp",
+    "inputs": {
+      "rate": "1050000000000000000",
+      "amount": "1"
+    },
+    "output": "2",
+    "reverts": false
+  },
+  {
+    "function": "syToAsset",
+    "inputs": {
+      "rate": "3000000000000000000",
+      "amount": "1000000000000000000"
+    },
+    "output": "3000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "syToAssetUp",
+    "inputs": {
+      "rate": "3000000000000000000",
+      "amount": "1000000000000000000"
+    },
+    "output": "3000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "assetToSy",
+    "inputs": {
+      "rate": "1000000000000000000",
+      "amount": "1000000000000000000"
+    },
+    "output": "1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "assetToSyUp",
+    "inputs": {
+      "rate": "1000000000000000000",
+      "amount": "1000000000000000000"
+    },
+    "output": "1000000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "assetToSy",
+    "inputs": {
+      "rate": "1050000000000000000",
+      "amount": "1000000000000000000"
+    },
+    "output": "952380952380952380",
+    "reverts": false
+  },
+  {
+    "function": "assetToSyUp",
+    "inputs": {
+      "rate": "1050000000000000000",
+      "amount": "1000000000000000000"
+    },
+    "output": "952380952380952381",
+    "reverts": false
+  },
+  {
+    "function": "assetToSy",
+    "inputs": {
+      "rate": "1100000000000000000",
+      "amount": "100000000000000000000"
+    },
+    "output": "90909090909090909090",
+    "reverts": false
+  },
+  {
+    "function": "assetToSyUp",
+    "inputs": {
+      "rate": "1100000000000000000",
+      "amount": "100000000000000000000"
+    },
+    "output": "90909090909090909091",
+    "reverts": false
+  },
+  {
+    "function": "assetToSy",
+    "inputs": {
+      "rate": "2000000000000000000",
+      "amount": "123456789000000000000000000"
+    },
+    "output": "61728394500000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "assetToSyUp",
+    "inputs": {
+      "rate": "2000000000000000000",
+      "amount": "123456789000000000000000000"
+    },
+    "output": "61728394500000000000000000",
+    "reverts": false
+  },
+  {
+    "function": "assetToSy",
+    "inputs": {
+      "rate": "1050000000000000000",
+      "amount": "1"
+    },
+    "output": "0",
+    "reverts": false
+  },
+  {
+    "function": "assetToSyUp",
+    "inputs": {
+      "rate": "1050000000000000000",
+      "amount": "1"
+    },
+    "output": "1",
+    "reverts": false
+  },
+  {
+    "function": "assetToSy",
+    "inputs": {
+      "rate": "3000000000000000000",
+      "amount": "1000000000000000000"
+    },
+    "output": "333333333333333333",
+    "reverts": false
+  },
+  {
+    "function": "assetToSyUp",
+    "inputs": {
+      "rate": "3000000000000000000",
+      "amount": "1000000000000000000"
+    },
+    "output": "333333333333333334",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "500000000000000000"
+    },
+    "output": "0",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "400000000000000000"
+    },
+    "output": "-405465108108164382",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "600000000000000000"
+    },
+    "output": "405465108108164381",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "300000000000000000"
+    },
+    "output": "-847297860387203614",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "700000000000000000"
+    },
+    "output": "847297860387203613",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "200000000000000000"
+    },
+    "output": "-1386294361119890618",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "800000000000000000"
+    },
+    "output": "1386294361119890618",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "100000000000000000"
+    },
+    "output": "-2197224577336219383",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "900000000000000000"
+    },
+    "output": "2197224577336219382",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "10000000000000000"
+    },
+    "output": "-4595119850134589927",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "990000000000000000"
+    },
+    "output": "4595119850134589926",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "1000000000000000"
+    },
+    "output": "-6906754778648553519",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "999000000000000000"
+    },
+    "output": "6906754778648553518",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "960000000000000000"
+    },
+    "output": "3178053830347945619",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "100000000000000"
+    },
+    "output": "-9210240366975849477",
+    "reverts": false
+  },
+  {
+    "function": "logProportion",
+    "inputs": {
+      "proportion": "999999999999999999"
+    },
+    "output": "41446531673892822311",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRateFromImpliedRate",
+    "inputs": {
+      "lnImpliedRate": "39399837653746832",
+      "timeToExpiry": "31536000"
+    },
+    "output": "1040186306165985469",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRateFromImpliedRate",
+    "inputs": {
+      "lnImpliedRate": "39399837653746832",
+      "timeToExpiry": "15768000"
+    },
+    "output": "1019895242741128521",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRateFromImpliedRate",
+    "inputs": {
+      "lnImpliedRate": "39399837653746832",
+      "timeToExpiry": "7884000"
+    },
+    "output": "1009898629933286186",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRateFromImpliedRate",
+    "inputs": {
+      "lnImpliedRate": "39399837653746832",
+      "timeToExpiry": "2628000"
+    },
+    "output": "1003288715802928151",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRateFromImpliedRate",
+    "inputs": {
+      "lnImpliedRate": "39399837653746832",
+      "timeToExpiry": "604800"
+    },
+    "output": "1000755898872531412",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRateFromImpliedRate",
+    "inputs": {
+      "lnImpliedRate": "39399837653746832",
+      "timeToExpiry": "86400"
+    },
+    "output": "1000107950586940512",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRateFromImpliedRate",
+    "inputs": {
+      "lnImpliedRate": "39399837653746832",
+      "timeToExpiry": "3600"
+    },
+    "output": "1000004497708476959",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRateFromImpliedRate",
+    "inputs": {
+      "lnImpliedRate": "39399837653746832",
+      "timeToExpiry": "1"
+    },
+    "output": "1000000001249360656",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRateFromImpliedRate",
+    "inputs": {
+      "lnImpliedRate": "9950330853168082",
+      "timeToExpiry": "31536000"
+    },
+    "output": "1009999999999999999",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRateFromImpliedRate",
+    "inputs": {
+      "lnImpliedRate": "48790164169432003",
+      "timeToExpiry": "31536000"
+    },
+    "output": "1049999999999999999",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRateFromImpliedRate",
+    "inputs": {
+      "lnImpliedRate": "95310179804324859",
+      "timeToExpiry": "31536000"
+    },
+    "output": "1099999999999999998",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRateFromImpliedRate",
+    "inputs": {
+      "lnImpliedRate": "405465108108164381",
+      "timeToExpiry": "31536000"
+    },
+    "output": "1499999999999999998",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRateFromImpliedRate",
+    "inputs": {
+      "lnImpliedRate": "693147180559945309",
+      "timeToExpiry": "31536000"
+    },
+    "output": "1999999999999999998",
+    "reverts": false
+  },
+  {
+    "function": "getRateScalar",
+    "inputs": {
+      "scalarRoot": "219693210787180268630",
+      "timeToExpiry": "31536000"
+    },
+    "output": "219693210787180268630",
+    "reverts": false
+  },
+  {
+    "function": "getRateScalar",
+    "inputs": {
+      "scalarRoot": "219693210787180268630",
+      "timeToExpiry": "15768000"
+    },
+    "output": "439386421574360537260",
+    "reverts": false
+  },
+  {
+    "function": "getRateScalar",
+    "inputs": {
+      "scalarRoot": "219693210787180268630",
+      "timeToExpiry": "7884000"
+    },
+    "output": "878772843148721074520",
+    "reverts": false
+  },
+  {
+    "function": "getRateScalar",
+    "inputs": {
+      "scalarRoot": "219693210787180268630",
+      "timeToExpiry": "2628000"
+    },
+    "output": "2636318529446163223560",
+    "reverts": false
+  },
+  {
+    "function": "getRateScalar",
+    "inputs": {
+      "scalarRoot": "219693210787180268630",
+      "timeToExpiry": "604800"
+    },
+    "output": "11455431705331542578564",
+    "reverts": false
+  },
+  {
+    "function": "getRateScalar",
+    "inputs": {
+      "scalarRoot": "219693210787180268630",
+      "timeToExpiry": "86400"
+    },
+    "output": "80188021937320798049950",
+    "reverts": false
+  },
+  {
+    "function": "getRateScalar",
+    "inputs": {
+      "scalarRoot": "219693210787180268630",
+      "timeToExpiry": "3600"
+    },
+    "output": "1924512526495699153198800",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "0"
+    },
+    "output": "1040138669417921641",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "1000000000000000000"
+    },
+    "output": "1040129565810852944",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": "1040047630342863266",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "50000000000000000000"
+    },
+    "output": "1039683109329385566",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "100000000000000000000"
+    },
+    "output": "1039225256141548056",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-1000000000000000000"
+    },
+    "output": "1040147773024990338",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-10000000000000000000"
+    },
+    "output": "1040229708492980016",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-50000000000000000000"
+    },
+    "output": "1040594229506457716",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-100000000000000000000"
+    },
+    "output": "1041052082694295226",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1500000000000000000000",
+      "totalAsset": "500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "0"
+    },
+    "output": "1045139335049470674",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1500000000000000000000",
+      "totalAsset": "500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "1000000000000000000"
+    },
+    "output": "1045127204990281187",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1500000000000000000000",
+      "totalAsset": "500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": "1045018750460843403",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1500000000000000000000",
+      "totalAsset": "500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "50000000000000000000"
+    },
+    "output": "1044551188829489505",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1500000000000000000000",
+      "totalAsset": "500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "100000000000000000000"
+    },
+    "output": "1043995401527900188",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1500000000000000000000",
+      "totalAsset": "500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-1000000000000000000"
+    },
+    "output": "1045151481292881075",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1500000000000000000000",
+      "totalAsset": "500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-10000000000000000000"
+    },
+    "output": "1045261538416338462",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1500000000000000000000",
+      "totalAsset": "500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-50000000000000000000"
+    },
+    "output": "1045768168038828025",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1500000000000000000000",
+      "totalAsset": "500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-100000000000000000000"
+    },
+    "output": "1046448806887134617",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "500000000000000000000",
+      "totalAsset": "1500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "0"
+    },
+    "output": "1035138003786372608",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "500000000000000000000",
+      "totalAsset": "1500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "1000000000000000000"
+    },
+    "output": "1035125857542962207",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "500000000000000000000",
+      "totalAsset": "1500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": "1035015800419504820",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "500000000000000000000",
+      "totalAsset": "1500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "50000000000000000000"
+    },
+    "output": "1034509170797015257",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "500000000000000000000",
+      "totalAsset": "1500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "100000000000000000000"
+    },
+    "output": "1033828531948708665",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "500000000000000000000",
+      "totalAsset": "1500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-1000000000000000000"
+    },
+    "output": "1035150133845562095",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "500000000000000000000",
+      "totalAsset": "1500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-10000000000000000000"
+    },
+    "output": "1035258588374999879",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "500000000000000000000",
+      "totalAsset": "1500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-50000000000000000000"
+    },
+    "output": "1035726150006353777",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "500000000000000000000",
+      "totalAsset": "1500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-100000000000000000000"
+    },
+    "output": "1036281937307943094",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000000",
+      "totalAsset": "1000000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "0"
+    },
+    "output": "1040138669417921641",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000000",
+      "totalAsset": "1000000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "1000000000000000000"
+    },
+    "output": "1040138660314317607",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000000",
+      "totalAsset": "1000000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": "1040138578381881297",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000000",
+      "totalAsset": "1000000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "50000000000000000000"
+    },
+    "output": "1040138214237719554",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000000",
+      "totalAsset": "1000000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "100000000000000000000"
+    },
+    "output": "1040137759057515191",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000000",
+      "totalAsset": "1000000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-1000000000000000000"
+    },
+    "output": "1040138678521525675",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000000",
+      "totalAsset": "1000000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-10000000000000000000"
+    },
+    "output": "1040138760453961985",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000000",
+      "totalAsset": "1000000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-50000000000000000000"
+    },
+    "output": "1040139124598123728",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000000",
+      "totalAsset": "1000000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-100000000000000000000"
+    },
+    "output": "1040139579778328091",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "100000000000000000000",
+      "totalAsset": "100000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "0"
+    },
+    "output": "1040138669417921641",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "100000000000000000000",
+      "totalAsset": "100000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "1000000000000000000"
+    },
+    "output": "1040047630342863266",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "100000000000000000000",
+      "totalAsset": "100000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": "1039225256141548056",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "100000000000000000000",
+      "totalAsset": "100000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "50000000000000000000"
+    },
+    "output": "1035138003786372608",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "100000000000000000000",
+      "totalAsset": "100000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "100000000000000000000"
+    },
+    "output": null,
+    "reverts": true
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "100000000000000000000",
+      "totalAsset": "100000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-1000000000000000000"
+    },
+    "output": "1040229708492980016",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "100000000000000000000",
+      "totalAsset": "100000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-10000000000000000000"
+    },
+    "output": "1041052082694295226",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "100000000000000000000",
+      "totalAsset": "100000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-50000000000000000000"
+    },
+    "output": "1045139335049470674",
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate",
+    "inputs": {
+      "totalPt": "100000000000000000000",
+      "totalAsset": "100000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "-100000000000000000000"
+    },
+    "output": null,
+    "reverts": true
+  },
+  {
+    "function": "getRateAnchor",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "lastLnImpliedRate": "39399837653746832",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "timeToExpiry": "31536000"
+    },
+    "output": "1040186306165985469",
+    "reverts": false
+  },
+  {
+    "function": "getRateAnchor",
+    "inputs": {
+      "totalPt": "1500000000000000000000",
+      "lastLnImpliedRate": "39399837653746832",
+      "totalAsset": "500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "timeToExpiry": "31536000"
+    },
+    "output": "1035185640534436436",
+    "reverts": false
+  },
+  {
+    "function": "getRateAnchor",
+    "inputs": {
+      "totalPt": "500000000000000000000",
+      "lastLnImpliedRate": "39399837653746832",
+      "totalAsset": "1500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "timeToExpiry": "31536000"
+    },
+    "output": "1045186971797534502",
+    "reverts": false
+  },
+  {
+    "function": "getRateAnchor",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "lastLnImpliedRate": "95310179804324859",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "timeToExpiry": "31536000"
+    },
+    "output": "1099999999999999998",
+    "reverts": false
+  },
+  {
+    "function": "getRateAnchor",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "lastLnImpliedRate": "9950330853168082",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "timeToExpiry": "31536000"
+    },
+    "output": "1009999999999999999",
+    "reverts": false
+  },
+  {
+    "function": "getLnImpliedRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1020000000000000000",
+      "timeToExpiry": "31536000"
+    },
+    "output": "19802627296179713",
+    "reverts": false
+  },
+  {
+    "function": "getLnImpliedRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "timeToExpiry": "31536000"
+    },
+    "output": "39354040243600579",
+    "reverts": false
+  },
+  {
+    "function": "getLnImpliedRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1100000000000000000",
+      "timeToExpiry": "31536000"
+    },
+    "output": "95310179804324859",
+    "reverts": false
+  },
+  {
+    "function": "getLnImpliedRate",
+    "inputs": {
+      "totalPt": "1500000000000000000000",
+      "totalAsset": "500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "timeToExpiry": "31536000"
+    },
+    "output": "44150211504026568",
+    "reverts": false
+  },
+  {
+    "function": "getLnImpliedRate",
+    "inputs": {
+      "totalPt": "500000000000000000000",
+      "totalAsset": "1500000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "timeToExpiry": "31536000"
+    },
+    "output": "34534754820410188",
+    "reverts": false
+  },
+  {
+    "function": "addLiquidityFirst",
+    "inputs": {
+      "syDesired": "100000000000000000000",
+      "ptDesired": "100000000000000000000"
+    },
+    "output": {
+      "lpToReserve": "1000",
+      "lpToAccount": "99999999999999999000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "addLiquidityFirst",
+    "inputs": {
+      "syDesired": "1000000000000000000000",
+      "ptDesired": "1000000000000000000000"
+    },
+    "output": {
+      "lpToReserve": "1000",
+      "lpToAccount": "999999999999999999000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "addLiquidityFirst",
+    "inputs": {
+      "syDesired": "1000000000000000000000000",
+      "ptDesired": "1000000000000000000000000"
+    },
+    "output": {
+      "lpToReserve": "1000",
+      "lpToAccount": "999999999999999999999000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "addLiquidityFirst",
+    "inputs": {
+      "syDesired": "2000000000000000000000",
+      "ptDesired": "500000000000000000000"
+    },
+    "output": {
+      "lpToReserve": "1000",
+      "lpToAccount": "999999999999999999000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "addLiquidityFirst",
+    "inputs": {
+      "syDesired": "500000000000000000000",
+      "ptDesired": "2000000000000000000000"
+    },
+    "output": {
+      "lpToReserve": "1000",
+      "lpToAccount": "999999999999999999000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "addLiquidityFirst",
+    "inputs": {
+      "syDesired": "10000000000000000000000",
+      "ptDesired": "100000000000000000000"
+    },
+    "output": {
+      "lpToReserve": "1000",
+      "lpToAccount": "999999999999999999000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "addLiquidityFirst",
+    "inputs": {
+      "syDesired": "1000000000000000",
+      "ptDesired": "1000000000000000"
+    },
+    "output": {
+      "lpToReserve": "1000",
+      "lpToAccount": "999999999999000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "addLiquidityProportional",
+    "inputs": {
+      "totalSy": "1000000000000000000000",
+      "totalPt": "1000000000000000000000",
+      "totalLp": "999999999999999999000",
+      "syDesired": "100000000000000000000",
+      "ptDesired": "100000000000000000000"
+    },
+    "output": {
+      "lpToAccount": "99999999999999999900",
+      "syUsed": "100000000000000000000",
+      "ptUsed": "100000000000000000000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "addLiquidityProportional",
+    "inputs": {
+      "totalSy": "1000000000000000000000",
+      "totalPt": "1000000000000000000000",
+      "totalLp": "999999999999999999000",
+      "syDesired": "200000000000000000000",
+      "ptDesired": "100000000000000000000"
+    },
+    "output": {
+      "lpToAccount": "99999999999999999900",
+      "syUsed": "100000000000000000000",
+      "ptUsed": "100000000000000000000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "addLiquidityProportional",
+    "inputs": {
+      "totalSy": "1000000000000000000000",
+      "totalPt": "1000000000000000000000",
+      "totalLp": "999999999999999999000",
+      "syDesired": "100000000000000000000",
+      "ptDesired": "200000000000000000000"
+    },
+    "output": {
+      "lpToAccount": "99999999999999999900",
+      "syUsed": "100000000000000000000",
+      "ptUsed": "100000000000000000000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "addLiquidityProportional",
+    "inputs": {
+      "totalSy": "1000000000000000000000",
+      "totalPt": "1000000000000000000000",
+      "totalLp": "999999999999999999000",
+      "syDesired": "10000000000000000000",
+      "ptDesired": "10000000000000000000"
+    },
+    "output": {
+      "lpToAccount": "9999999999999999990",
+      "syUsed": "10000000000000000000",
+      "ptUsed": "10000000000000000000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "addLiquidityProportional",
+    "inputs": {
+      "totalSy": "1000000000000000000000",
+      "totalPt": "1000000000000000000000",
+      "totalLp": "999999999999999999000",
+      "syDesired": "500000000000000000000",
+      "ptDesired": "500000000000000000000"
+    },
+    "output": {
+      "lpToAccount": "499999999999999999500",
+      "syUsed": "500000000000000000000",
+      "ptUsed": "500000000000000000000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "removeLiquidity",
+    "inputs": {
+      "totalSy": "1000000000000000000000",
+      "totalPt": "1000000000000000000000",
+      "totalLp": "999999999999999999000",
+      "lpToRemove": "9999999999999999990"
+    },
+    "output": {
+      "netSyToAccount": "10000000000000000000",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "removeLiquidity",
+    "inputs": {
+      "totalSy": "1000000000000000000000",
+      "totalPt": "1000000000000000000000",
+      "totalLp": "999999999999999999000",
+      "lpToRemove": "99999999999999999900"
+    },
+    "output": {
+      "netSyToAccount": "100000000000000000000",
+      "netPtToAccount": "100000000000000000000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "removeLiquidity",
+    "inputs": {
+      "totalSy": "1000000000000000000000",
+      "totalPt": "1000000000000000000000",
+      "totalLp": "999999999999999999000",
+      "lpToRemove": "249999999999999999750"
+    },
+    "output": {
+      "netSyToAccount": "250000000000000000000",
+      "netPtToAccount": "250000000000000000000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "removeLiquidity",
+    "inputs": {
+      "totalSy": "1000000000000000000000",
+      "totalPt": "1000000000000000000000",
+      "totalLp": "999999999999999999000",
+      "lpToRemove": "499999999999999999500"
+    },
+    "output": {
+      "netSyToAccount": "500000000000000000000",
+      "netPtToAccount": "500000000000000000000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "removeLiquidity",
+    "inputs": {
+      "totalSy": "1000000000000000000000",
+      "totalPt": "1000000000000000000000",
+      "totalLp": "999999999999999999000",
+      "lpToRemove": "749999999999999999250"
+    },
+    "output": {
+      "netSyToAccount": "750000000000000000000",
+      "netPtToAccount": "750000000000000000000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "removeLiquidity",
+    "inputs": {
+      "totalSy": "1000000000000000000000",
+      "totalPt": "1000000000000000000000",
+      "totalLp": "999999999999999999000",
+      "lpToRemove": "989999999999999999010"
+    },
+    "output": {
+      "netSyToAccount": "990000000000000000000",
+      "netPtToAccount": "990000000000000000000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "removeLiquidity",
+    "inputs": {
+      "totalSy": "1000000000000000000000",
+      "totalPt": "1000000000000000000000",
+      "totalLp": "999999999999999999000",
+      "lpToRemove": "999999999999999999000"
+    },
+    "output": {
+      "netSyToAccount": "1000000000000000000000",
+      "netPtToAccount": "1000000000000000000000"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "1000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-917467507083566",
+      "netSyFee": "914719375907232371",
+      "netSyToReserve": "91471937590723237"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-9175397856286675",
+      "netSyFee": "9147914379531979765",
+      "netSyToReserve": "914791437953197976"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "50000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-45893074111972708",
+      "netSyFee": "45755608548591859745",
+      "netSyToReserve": "4575560854859185974"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "100000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-91826586598893777",
+      "netSyFee": "91551534345271394131",
+      "netSyToReserve": "9155153434527139412"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "200000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-183818057741902657",
+      "netSyFee": "183267459348659009480",
+      "netSyToReserve": "18326745934865900947"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "-1000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "913793836811559148008",
+      "netSyFee": "912878215995863693256",
+      "netSyToReserve": "91287821599586369324"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "-10000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "9137218602807468255270",
+      "netSyFee": "9128063115854872923600",
+      "netSyToReserve": "912806311585487292360"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "-50000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "45670089138121930954443",
+      "netSyFee": "45624327739231959400041",
+      "netSyToReserve": "4562432773923195940003"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "-100000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "91300006999036297565749",
+      "netSyFee": "91208524452849353440301",
+      "netSyToReserve": "9120852445284935344029"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "-200000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "182436655732820986792035",
+      "netSyFee": "182253854325320047752119",
+      "netSyToReserve": "18225385432532004775211"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1000999500166625",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-9166242290146567",
+      "netSyFee": "9147923535098119873",
+      "netSyToReserve": "914792353509811986"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1004995008319372",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-9202829517007558",
+      "netSyFee": "9147886947871258882",
+      "netSyToReserve": "914788694787125887"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1009950330853168",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-9248205850325443",
+      "netSyFee": "9147841571537940997",
+      "netSyToReserve": "914784157153794099"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1019802627296179",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-9338424213367538",
+      "netSyFee": "9147751353174898902",
+      "netSyToReserve": "914775135317489889"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1000000000000000000",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-9634167749101008",
+      "netSyFee": "9605310098508578754",
+      "netSyToReserve": "960531009850857875"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1020000000000000000",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-9445262499118636",
+      "netSyFee": "9416970684812332111",
+      "netSyToReserve": "941697068481233210"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-9175397856286675",
+      "netSyFee": "9147914379531979765",
+      "netSyToReserve": "914791437953197976"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1100000000000000000",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-8758334317364553",
+      "netSyFee": "8732100089553253412",
+      "netSyToReserve": "873210008955325340"
+    },
+    "reverts": false
+  },
+  {
+    "function": "calcTrade",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalAsset": "1000000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "feeRate": "1001999333777814",
+      "reserveFeePercent": "10",
+      "pyIndexValue": "1200000000000000000",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-8028473124250840",
+      "netSyFee": "8004425082090482295",
+      "netSyToReserve": "800442508209048229"
+    },
+    "reverts": false
+  },
+  {
+    "function": "setInitialLnImpliedRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalSy": "1000000000000000000000",
+      "scalarRoot": "219693210787180268630",
+      "expiry": "32536000",
+      "initialAnchor": "1040138669417921641",
+      "blockTime": "1000000",
+      "pyIndexValue": "1000000000000000000"
+    },
+    "output": "39354040243600579",
+    "reverts": false
+  },
+  {
+    "function": "setInitialLnImpliedRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalSy": "1000000000000000000000",
+      "scalarRoot": "219693210787180268630",
+      "expiry": "32536000",
+      "initialAnchor": "1100000000000000000",
+      "blockTime": "1000000",
+      "pyIndexValue": "1000000000000000000"
+    },
+    "output": "95310179804324859",
+    "reverts": false
+  },
+  {
+    "function": "setInitialLnImpliedRate",
+    "inputs": {
+      "totalPt": "1500000000000000000000",
+      "totalSy": "500000000000000000000",
+      "scalarRoot": "219693210787180268630",
+      "expiry": "32536000",
+      "initialAnchor": "1040138669417921641",
+      "blockTime": "1000000",
+      "pyIndexValue": "1000000000000000000"
+    },
+    "output": "44150211504026568",
+    "reverts": false
+  },
+  {
+    "function": "setInitialLnImpliedRate",
+    "inputs": {
+      "totalPt": "500000000000000000000",
+      "totalSy": "1500000000000000000000",
+      "scalarRoot": "219693210787180268630",
+      "expiry": "32536000",
+      "initialAnchor": "1040138669417921641",
+      "blockTime": "1000000",
+      "pyIndexValue": "1000000000000000000"
+    },
+    "output": "34534754820410188",
+    "reverts": false
+  },
+  {
+    "function": "setInitialLnImpliedRate",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalSy": "1000000000000000000000",
+      "scalarRoot": "219693210787180268630",
+      "expiry": "32536000",
+      "initialAnchor": "1040138669417921641",
+      "blockTime": "1000000",
+      "pyIndexValue": "1050000000000000000"
+    },
+    "output": "39140504408031974",
+    "reverts": false
+  },
+  {
+    "function": "getMarketPreCompute",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalSy": "1000000000000000000000",
+      "scalarRoot": "219693210787180268630",
+      "expiry": "32536000",
+      "lnFeeRateRoot": "1998002662673056",
+      "lastLnImpliedRate": "39399837653746832",
+      "blockTime": "1000000",
+      "pyIndexValue": "1000000000000000000"
+    },
+    "output": {
+      "rateScalar": "219693210787180268630",
+      "totalAsset": "1000000000000000000000",
+      "rateAnchor": "1040186306165985469",
+      "feeRate": "1001999999999999999"
+    },
+    "reverts": false
+  },
+  {
+    "function": "getMarketPreCompute",
+    "inputs": {
+      "totalPt": "1500000000000000000000",
+      "totalSy": "500000000000000000000",
+      "scalarRoot": "219693210787180268630",
+      "expiry": "32536000",
+      "lnFeeRateRoot": "1998002662673056",
+      "lastLnImpliedRate": "39399837653746832",
+      "blockTime": "1000000",
+      "pyIndexValue": "1000000000000000000"
+    },
+    "output": {
+      "rateScalar": "219693210787180268630",
+      "totalAsset": "500000000000000000000",
+      "rateAnchor": "1035185640534436436",
+      "feeRate": "1001999999999999999"
+    },
+    "reverts": false
+  },
+  {
+    "function": "getMarketPreCompute",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalSy": "1000000000000000000000",
+      "scalarRoot": "219693210787180268630",
+      "expiry": "32536000",
+      "lnFeeRateRoot": "1998002662673056",
+      "lastLnImpliedRate": "39399837653746832",
+      "blockTime": "1000000",
+      "pyIndexValue": "1050000000000000000"
+    },
+    "output": {
+      "rateScalar": "219693210787180268630",
+      "totalAsset": "1050000000000000000000",
+      "rateAnchor": "1040408389333665583",
+      "feeRate": "1001999999999999999"
+    },
+    "reverts": false
+  },
+  {
+    "function": "executeTradeWithState",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalSy": "1000000000000000000000",
+      "scalarRoot": "219693210787180268630",
+      "expiry": "32536000",
+      "lnFeeRateRoot": "1998002662673056",
+      "lastLnImpliedRate": "39399837653746832",
+      "reserveFeePercent": "10",
+      "blockTime": "1000000",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-9174964784564230226",
+      "netSyFee": "18313302963202046",
+      "netSyToReserve": "1831330296320203",
+      "newLastLnImpliedRate": "39315896205232384",
+      "newTotalPt": "990000000000000000000",
+      "newTotalSy": "1009173133454267910023"
+    },
+    "reverts": false
+  },
+  {
+    "function": "executeTradeWithState",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalSy": "1000000000000000000000",
+      "scalarRoot": "219693210787180268630",
+      "expiry": "32536000",
+      "lnFeeRateRoot": "1998002662673056",
+      "lastLnImpliedRate": "39399837653746832",
+      "reserveFeePercent": "10",
+      "blockTime": "1000000",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "100000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-91820693917982069962",
+      "netSyFee": "183274838159644758",
+      "netSyToReserve": "18327483815964475",
+      "newLastLnImpliedRate": "38554088838708457",
+      "newTotalPt": "900000000000000000000",
+      "newTotalSy": "1091802366434166105487"
+    },
+    "reverts": false
+  },
+  {
+    "function": "executeTradeWithState",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalSy": "1000000000000000000000",
+      "scalarRoot": "219693210787180268630",
+      "expiry": "32536000",
+      "lnFeeRateRoot": "1998002662673056",
+      "lastLnImpliedRate": "39399837653746832",
+      "reserveFeePercent": "10",
+      "blockTime": "1000000",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "-10000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "9136813338237296360",
+      "netSyFee": "18273626676474582",
+      "netSyToReserve": "1827362667647458",
+      "newLastLnImpliedRate": "39483550360972100",
+      "newTotalPt": "1010000000000000000000",
+      "newTotalSy": "990861359299095056182"
+    },
+    "reverts": false
+  },
+  {
+    "function": "executeTradeWithState",
+    "inputs": {
+      "totalPt": "1000000000000000000000",
+      "totalSy": "1000000000000000000000",
+      "scalarRoot": "219693210787180268630",
+      "expiry": "32536000",
+      "lnFeeRateRoot": "1998002662673056",
+      "lastLnImpliedRate": "39399837653746832",
+      "reserveFeePercent": "10",
+      "blockTime": "1000000",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "-100000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "91297875170274474181",
+      "netSyFee": "182595750340548856",
+      "netSyToReserve": "18259575034054884",
+      "newLastLnImpliedRate": "40235593008655302",
+      "newTotalPt": "1100000000000000000000",
+      "newTotalSy": "908683865254691470935"
+    },
+    "reverts": false
+  },
+  {
+    "function": "executeTradeWithState",
+    "inputs": {
+      "totalPt": "1000000000000000000000000",
+      "totalSy": "1000000000000000000000000",
+      "scalarRoot": "219693210787180268630",
+      "expiry": "32536000",
+      "lnFeeRateRoot": "1998002662673056",
+      "lastLnImpliedRate": "39399837653746832",
+      "reserveFeePercent": "10",
+      "blockTime": "1000000",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "1000000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-917425909044814524902",
+      "netSyFee": "1831189439211205721",
+      "netSyToReserve": "183118943921120571",
+      "newLastLnImpliedRate": "39391447512524155",
+      "newTotalPt": "999000000000000000000000",
+      "newTotalSy": "1000917242790100893404331"
+    },
+    "reverts": false
+  },
+  {
+    "function": "executeTradeWithState",
+    "inputs": {
+      "totalPt": "1500000000000000000000",
+      "totalSy": "500000000000000000000",
+      "scalarRoot": "219693210787180268630",
+      "expiry": "32536000",
+      "lnFeeRateRoot": "1998002662673056",
+      "lastLnImpliedRate": "39399837653746832",
+      "reserveFeePercent": "10",
+      "blockTime": "1000000",
+      "pyIndexValue": "1050000000000000000",
+      "netPtToAccount": "10000000000000000000"
+    },
+    "output": {
+      "netSyToAccount": "-9175206846634177567",
+      "netSyFee": "18313786121026293",
+      "netSyToReserve": "1831378612102628",
+      "newLastLnImpliedRate": "39291004212710682",
+      "newTotalPt": "1490000000000000000000",
+      "newTotalSy": "509173375468022074939"
+    },
+    "reverts": false
+  },
+  {
+    "function": "getExchangeRate_revert_proportion",
+    "inputs": {
+      "totalPt": "970000000000000000000",
+      "totalAsset": "30000000000000000000",
+      "rateScalar": "219693210787180268630",
+      "rateAnchor": "1040138669417921641",
+      "netPtToAccount": "0"
+    },
+    "output": null,
+    "reverts": true
+  },
+  {
+    "function": "logProportion_revert_one",
+    "inputs": {
+      "proportion": "1000000000000000000"
+    },
+    "output": null,
+    "reverts": true
+  },
+  {
+    "function": "ln_revert_zero",
+    "inputs": {
+      "a": "0"
+    },
+    "output": null,
+    "reverts": true
+  },
+  {
+    "function": "exp_revert_overflow",
+    "inputs": {
+      "x": "131000000000000000000"
+    },
+    "output": null,
+    "reverts": true
+  },
+  {
+    "function": "divDown_revert_zero",
+    "inputs": {
+      "a": "1000000000000000000",
+      "b": "0"
+    },
+    "output": null,
+    "reverts": true
+  }
+]
