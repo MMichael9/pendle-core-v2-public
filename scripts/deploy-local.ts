@@ -146,7 +146,10 @@ async function main(): Promise<DeploymentResult> {
   // 5. Deploy MarketFactoryLocal (no vePendle/gaugeController needed)
   // ============================================
   console.log("\n[5/13] Deploying MarketFactoryLocal...");
-  const PendleMarketFactoryLocal = await ethers.getContractFactory("PendleMarketFactoryLocal");
+  // MarketFactoryLocal deploys PendleMarketV6Local which uses OracleLib
+  const PendleMarketFactoryLocal = await ethers.getContractFactory("PendleMarketFactoryLocal", {
+    libraries: { OracleLib: oracleLib.address },
+  });
   const marketFactory = await PendleMarketFactoryLocal.deploy(
     deployer.address,           // owner
     result.yieldContractFactory, // yieldContractFactory
