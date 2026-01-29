@@ -9,6 +9,7 @@
  * Usage: npx hardhat run scripts/deploy-local.ts --network localhost
  */
 
+// @ts-ignore - ethers injected by hardhat-ethers plugin at runtime
 import { ethers } from "hardhat";
 import * as fs from "fs";
 
