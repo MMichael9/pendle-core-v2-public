@@ -3,8 +3,8 @@
  * 
  * Deploys Pendle core contracts for local testing on Anvil.
  * - Uses PendleMarketV6Local (no vePendle/gaugeController dependency)
- * - Uses PendleMarketFactoryLocal (simple CREATE deployment)
- * - YieldContractFactory still uses split code pattern (for YieldToken)
+ * - Uses PendleMarketFactoryLocal with CREATE2 split code pattern (matches production)
+ * - Only gauge/vePendle parameters removed - all other patterns preserved
  * 
  * Usage: npx hardhat run scripts/deploy-local.ts --network localhost
  */
@@ -17,9 +17,16 @@ interface DeploymentResult {
   baseSplitCodeFactory: string;
   oracleLib: string;
   
+  // Split code for PendleMarketV6Local
+  marketCreationCodeContractA: string;
+  marketCreationCodeSizeA: number;
+  marketCreationCodeContractB: string;
+  marketCreationCodeSizeB: number;
+  
   // Factories
   yieldContractFactory: string;
   marketFactory: string;
+  marketFactoryImpl: string;
   syFactory: string;
   
   // Router (main entry point)
@@ -59,8 +66,13 @@ async function main(): Promise<DeploymentResult> {
   const result: DeploymentResult = {
     baseSplitCodeFactory: "",
     oracleLib: "",
+    marketCreationCodeContractA: "",
+    marketCreationCodeSizeA: 0,
+    marketCreationCodeContractB: "",
+    marketCreationCodeSizeB: 0,
     yieldContractFactory: "",
     marketFactory: "",
+    marketFactoryImpl: "",
     syFactory: "",
     router: "",
     routerFacets: {
@@ -88,7 +100,7 @@ async function main(): Promise<DeploymentResult> {
   // ============================================
   // 1. Deploy BaseSplitCodeFactoryContract
   // ============================================
-  console.log("\n[1/13] Deploying BaseSplitCodeFactoryContract...");
+  console.log("\n[1/14] Deploying BaseSplitCodeFactoryContract...");
   const BaseSplitCodeFactoryContract = await ethers.getContractFactory("BaseSplitCodeFactoryContract");
   const baseSplitCodeFactory = await BaseSplitCodeFactoryContract.deploy();
   await baseSplitCodeFactory.deployed();
@@ -98,7 +110,7 @@ async function main(): Promise<DeploymentResult> {
   // ============================================
   // 2. Deploy YieldToken creation code via split factory
   // ============================================
-  console.log("\n[2/13] Deploying YieldToken split code...");
+  console.log("\n[2/14] Deploying YieldToken split code...");
   const PendleYieldToken = await ethers.getContractFactory("PendleYieldToken");
   const ytBytecode = PendleYieldToken.bytecode;
   
@@ -113,7 +125,7 @@ async function main(): Promise<DeploymentResult> {
   // ============================================
   // 3. Deploy OracleLib (required library for Market)
   // ============================================
-  console.log("\n[3/13] Deploying OracleLib...");
+  console.log("\n[3/14] Deploying OracleLib...");
   const OracleLib = await ethers.getContractFactory("OracleLib");
   const oracleLib = await OracleLib.deploy();
   await oracleLib.deployed();
@@ -121,9 +133,33 @@ async function main(): Promise<DeploymentResult> {
   console.log("OracleLib:", result.oracleLib);
 
   // ============================================
-  // 4. Deploy YieldContractFactory
+  // 4. Deploy PendleMarketV6Local split code (with OracleLib linked)
   // ============================================
-  console.log("\n[4/13] Deploying YieldContractFactory...");
+  console.log("\n[4/14] Deploying PendleMarketV6Local split code...");
+  // Get the factory with OracleLib linked - this gives us the linked bytecode
+  const PendleMarketV6Local = await ethers.getContractFactory("PendleMarketV6Local", {
+    libraries: { OracleLib: oracleLib.address },
+  });
+  const marketBytecode = PendleMarketV6Local.bytecode;
+  
+  const mktDeployTx = await baseSplitCodeFactory.deploy("PendleMarketV6Local", marketBytecode);
+  const mktReceipt = await mktDeployTx.wait();
+  
+  const mktDeployedEvent = mktReceipt.events?.find((e: any) => e.event === "Deployed");
+  if (!mktDeployedEvent) throw new Error("Failed to find Market Deployed event");
+  const [, mktCodeA, mktSizeA, mktCodeB, mktSizeB] = mktDeployedEvent.args!;
+  result.marketCreationCodeContractA = mktCodeA;
+  result.marketCreationCodeSizeA = mktSizeA.toNumber();
+  result.marketCreationCodeContractB = mktCodeB;
+  result.marketCreationCodeSizeB = mktSizeB.toNumber();
+  console.log("PendleMarketV6Local split code deployed");
+  console.log("  CodeContractA:", mktCodeA);
+  console.log("  CodeContractB:", mktCodeB);
+
+  // ============================================
+  // 5. Deploy YieldContractFactory
+  // ============================================
+  console.log("\n[5/14] Deploying YieldContractFactory...");
   const PendleYieldContractFactoryUpg = await ethers.getContractFactory("PendleYieldContractFactoryUpg");
   const ycfImpl = await PendleYieldContractFactoryUpg.deploy(ytCodeA, ytSizeA, ytCodeB, ytSizeB);
   await ycfImpl.deployed();
@@ -143,27 +179,41 @@ async function main(): Promise<DeploymentResult> {
   console.log("YieldContractFactory:", result.yieldContractFactory);
 
   // ============================================
-  // 5. Deploy MarketFactoryLocal (no vePendle/gaugeController needed)
+  // 6. Deploy MarketFactoryLocal (CREATE2 split code pattern)
   // ============================================
-  console.log("\n[5/13] Deploying MarketFactoryLocal...");
-  // MarketFactoryLocal deploys PendleMarketV6Local which uses OracleLib
-  const PendleMarketFactoryLocal = await ethers.getContractFactory("PendleMarketFactoryLocal", {
-    libraries: { OracleLib: oracleLib.address },
-  });
-  const marketFactory = await PendleMarketFactoryLocal.deploy(
-    deployer.address,           // owner
-    result.yieldContractFactory, // yieldContractFactory
-    deployer.address,           // treasury
-    80                          // reserveFeePercent
+  console.log("\n[6/14] Deploying MarketFactoryLocal...");
+  // MarketFactoryLocal uses the split code pattern like production
+  const PendleMarketFactoryLocal = await ethers.getContractFactory("PendleMarketFactoryLocal");
+  const marketFactoryImpl = await PendleMarketFactoryLocal.deploy(
+    result.yieldContractFactory,   // yieldContractFactory
+    mktCodeA,                       // marketCreationCodeContractA
+    mktSizeA,                       // marketCreationCodeSizeA
+    mktCodeB,                       // marketCreationCodeContractB
+    mktSizeB                        // marketCreationCodeSizeB
   );
-  await marketFactory.deployed();
-  result.marketFactory = marketFactory.address;
-  console.log("MarketFactoryLocal:", result.marketFactory);
+  await marketFactoryImpl.deployed();
+  result.marketFactoryImpl = marketFactoryImpl.address;
+  console.log("MarketFactoryLocal impl:", result.marketFactoryImpl);
+
+  // Deploy proxy and initialize
+  const mfInitData = marketFactoryImpl.interface.encodeFunctionData("initialize", [
+    deployer.address,  // owner
+    deployer.address,  // treasury
+    80                 // reserveFeePercent
+  ]);
+  const marketFactoryProxy = await TransparentUpgradeableProxy.deploy(
+    marketFactoryImpl.address, 
+    deployer.address, 
+    mfInitData
+  );
+  await marketFactoryProxy.deployed();
+  result.marketFactory = marketFactoryProxy.address;
+  console.log("MarketFactoryLocal proxy:", result.marketFactory);
 
   // ============================================
-  // 6. Deploy SY Factory
+  // 7. Deploy SY Factory
   // ============================================
-  console.log("\n[6/13] Deploying SY Factory...");
+  console.log("\n[7/14] Deploying SY Factory...");
   const PendleCommonSYFactory = await ethers.getContractFactory("PendleCommonSYFactory");
   const syFactoryImpl = await PendleCommonSYFactory.deploy(deployer.address);
   await syFactoryImpl.deployed();
@@ -175,9 +225,9 @@ async function main(): Promise<DeploymentResult> {
   console.log("SY Factory:", result.syFactory);
 
   // ============================================
-  // 7. Deploy Router + Facets
+  // 8. Deploy Router + Facets
   // ============================================
-  console.log("\n[7/13] Deploying Router facets...");
+  console.log("\n[8/14] Deploying Router facets...");
 
   const deployFacet = async (name: string): Promise<string> => {
     const Factory = await ethers.getContractFactory(name);
@@ -203,9 +253,9 @@ async function main(): Promise<DeploymentResult> {
   console.log("PendleRouterV4:", result.router);
 
   // ============================================
-  // 8. Register Router facets
+  // 9. Register Router facets
   // ============================================
-  console.log("\n[8/13] Registering Router facets...");
+  console.log("\n[9/14] Registering Router facets...");
 
   const getSelectors = async (contractName: string): Promise<string[]> => {
     const factory = await ethers.getContractFactory(contractName);
@@ -231,9 +281,9 @@ async function main(): Promise<DeploymentResult> {
   console.log("Router facets registered");
 
   // ============================================
-  // 9. Deploy RouterStatic + Static Facets
+  // 10. Deploy RouterStatic + Static Facets
   // ============================================
-  console.log("\n[9/13] Deploying RouterStatic facets...");
+  console.log("\n[10/14] Deploying RouterStatic facets...");
 
   result.routerStaticFacets.actionStorageStatic = await deployFacet("ActionStorageStatic");
   result.routerStaticFacets.actionInfoStatic = await deployFacet("ActionInfoStatic");
@@ -249,9 +299,9 @@ async function main(): Promise<DeploymentResult> {
   console.log("PendleRouterStatic:", result.routerStatic);
 
   // ============================================
-  // 10. Register RouterStatic facets
+  // 11. Register RouterStatic facets
   // ============================================
-  console.log("\n[10/13] Registering RouterStatic facets...");
+  console.log("\n[11/14] Registering RouterStatic facets...");
 
   const staticSelectorsToFacets = [
     { facet: result.routerStaticFacets.actionStorageStatic, selectors: await getSelectors("ActionStorageStatic") },
@@ -266,9 +316,9 @@ async function main(): Promise<DeploymentResult> {
   console.log("RouterStatic facets registered");
 
   // ============================================
-  // 11. Deploy PY/YT/LP Oracle
+  // 12. Deploy PY/YT/LP Oracle
   // ============================================
-  console.log("\n[11/13] Deploying PY/YT/LP Oracle...");
+  console.log("\n[12/14] Deploying PY/YT/LP Oracle...");
   const PendlePYLpOracle = await ethers.getContractFactory("PendlePYLpOracle");
   const oracleImpl = await PendlePYLpOracle.deploy();
   await oracleImpl.deployed();
@@ -280,9 +330,9 @@ async function main(): Promise<DeploymentResult> {
   console.log("PendlePYLpOracle:", result.pyYtLpOracle);
 
   // ============================================
-  // 12. Deploy PendleSwap (swap aggregator)
+  // 13. Deploy PendleSwap (swap aggregator)
   // ============================================
-  console.log("\n[12/13] Deploying PendleSwap...");
+  console.log("\n[13/14] Deploying PendleSwap...");
   const PendleSwap = await ethers.getContractFactory("PendleSwap");
   const pendleSwapImpl = await PendleSwap.deploy(true);
   await pendleSwapImpl.deployed();
@@ -295,9 +345,9 @@ async function main(): Promise<DeploymentResult> {
   console.log("PendleSwap:", result.pendleSwap);
 
   // ============================================
-  // 13. Deploy Pool Deploy Helper
+  // 14. Deploy Pool Deploy Helper
   // ============================================
-  console.log("\n[13/13] Deploying PoolDeployHelper...");
+  console.log("\n[14/14] Deploying PoolDeployHelper...");
   const PendlePoolDeployHelperV2 = await ethers.getContractFactory("PendlePoolDeployHelperV2");
   const poolDeployHelper = await PendlePoolDeployHelperV2.deploy(
     result.router,
@@ -317,9 +367,13 @@ async function main(): Promise<DeploymentResult> {
   console.log("\nCore Infrastructure:");
   console.log("  BaseSplitCodeFactory:", result.baseSplitCodeFactory);
   console.log("  OracleLib:", result.oracleLib);
+  console.log("\nMarket Split Code (PendleMarketV6Local):");
+  console.log("  CodeContractA:", result.marketCreationCodeContractA);
+  console.log("  CodeContractB:", result.marketCreationCodeContractB);
   console.log("\nFactories:");
   console.log("  YieldContractFactory:", result.yieldContractFactory);
   console.log("  MarketFactoryLocal:", result.marketFactory);
+  console.log("  MarketFactoryLocal impl:", result.marketFactoryImpl);
   console.log("  SY Factory:", result.syFactory);
   console.log("\nRouter (main entry point):");
   console.log("  Router:", result.router);
@@ -333,6 +387,8 @@ async function main(): Promise<DeploymentResult> {
   console.log("  PoolDeployHelper:", result.poolDeployHelper);
   console.log("\nNotes:");
   console.log("  - Uses PendleMarketV6Local (no gauge dependency)");
+  console.log("  - Uses CREATE2 split code pattern (matches production)");
+  console.log("  - MarketFactory is upgradeable (behind proxy)");
   console.log("  - No vePendle/gaugeController required");
   console.log("  - Deployer is owner and treasury");
   console.log("  - Ready to create SY tokens, PT/YT pairs, and markets");

@@ -1,33 +1,57 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 pragma solidity ^0.8.17;
-
 import "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
 
 import "../../interfaces/IPMarket.sol";
 import "../../interfaces/IPMarketFactory.sol";
 import "../../interfaces/IPYieldContractFactory.sol";
 
+import "../libraries/BaseSplitCodeFactory.sol";
+import "../libraries/BoringOwnableUpgradeableV2.sol";
 import "../libraries/Errors.sol";
-import "./PendleMarketV6Local.sol";
+
+// =============================================================================
+// LOCAL TESTING VERSION - CHANGES FROM PendleMarketFactoryV6Upg.sol:
+// =============================================================================
+//
+// REMOVED IMMUTABLES (gauge system not needed for local testing):
+//   address public immutable vePendle;
+//   address public immutable gaugeController;
+//
+// REMOVED FROM CONSTRUCTOR:
+//   address _vePendle,
+//   address _gaugeController
+//
+// CHANGED IN createNewMarket():
+//   Original abi.encode: (PT, scalarRoot, initialAnchor, lnFeeRateRoot, vePendle, gaugeController)
+//   Local abi.encode:    (PT, scalarRoot, initialAnchor, lnFeeRateRoot)
+//
+// NOTE: This factory deploys PendleMarketV6Local via split code (CREATE2).
+//       The split code contracts must be pre-deployed for PendleMarketV6Local bytecode.
+//
+// =============================================================================
 
 /**
  * @title PendleMarketFactoryLocal
- * @notice Factory for local testing - deploys PendleMarketV6Local without vePendle/gaugeController.
- * @dev Simple owner pattern, deploys via CREATE (not CREATE2 split code).
+ * @notice Local testing version of PendleMarketFactoryV6Upg.
+ * @dev Identical to production except vePendle/gaugeController removed.
+ *      Uses split code factory (CREATE2) - NOT simple CREATE like Hydra version.
+ *      Deploys PendleMarketV6Local markets.
  */
-contract PendleMarketFactoryLocal is IPMarketFactory {
+contract PendleMarketFactoryLocal is BoringOwnableUpgradeableV2, IPMarketFactory {
     using EnumerableSet for EnumerableSet.AddressSet;
 
     uint256 public constant VERSION = 6;
 
-    address public owner;
-
-    modifier onlyOwner() {
-        require(msg.sender == owner, "not owner");
-        _;
-    }
+    address public immutable marketCreationCodeContractA;
+    uint256 public immutable marketCreationCodeSizeA;
+    address public immutable marketCreationCodeContractB;
+    uint256 public immutable marketCreationCodeSizeB;
 
     address public immutable yieldContractFactory;
+    // REMOVED: address public immutable vePendle;
+    // REMOVED: address public immutable gaugeController;
+
     uint256 public immutable maxLnFeeRateRoot;
     uint8 public constant maxReserveFeePercent = 100;
     int256 public constant minInitialAnchor = PMath.IONE;
@@ -35,23 +59,45 @@ contract PendleMarketFactoryLocal is IPMarketFactory {
     address public treasury;
     uint8 public reserveFeePercent;
 
+    // router -> market -> lnFeeRateRoot. lnFeeRateRoot == 0 means no override
     mapping(address => mapping(address => uint80)) internal overriddenFee;
+
+    // PT -> scalarRoot -> initialAnchor
     mapping(address => mapping(int256 => mapping(int256 => mapping(uint80 => address)))) internal markets;
     EnumerableSet.AddressSet internal allMarkets;
 
     constructor(
-        address _owner,
         address _yieldContractFactory,
-        address _treasury,
-        uint8 _reserveFeePercent
+        address _marketCreationCodeContractA,
+        uint256 _marketCreationCodeSizeA,
+        address _marketCreationCodeContractB,
+        uint256 _marketCreationCodeSizeB
+        // REMOVED: address _vePendle,
+        // REMOVED: address _gaugeController
     ) {
-        owner = _owner;
         yieldContractFactory = _yieldContractFactory;
-        maxLnFeeRateRoot = uint256(LogExpMath.ln(int256((105 * PMath.IONE) / 100)));
-        treasury = _treasury;
-        reserveFeePercent = _reserveFeePercent;
+        maxLnFeeRateRoot = uint256(LogExpMath.ln(int256((105 * PMath.IONE) / 100))); // ln(1.05)
+
+        marketCreationCodeContractA = _marketCreationCodeContractA;
+        marketCreationCodeSizeA = _marketCreationCodeSizeA;
+        marketCreationCodeContractB = _marketCreationCodeContractB;
+        marketCreationCodeSizeB = _marketCreationCodeSizeB;
+
+        // REMOVED: vePendle = _vePendle;
+        // REMOVED: gaugeController = _gaugeController;
+
+        _disableInitializers();
     }
 
+    function initialize(address _owner, address _treasury, uint8 _reserveFeePercent) external initializer {
+        __BoringOwnableV2_init(_owner);
+        setTreasuryAndFeeReserve(_treasury, _reserveFeePercent);
+    }
+
+    /**
+     * @notice Create a market between PT and its corresponding SY with scalar & anchor config.
+     * Anyone is allowed to create a market on their own.
+     */
     function createNewMarket(address PT, int256 scalarRoot, int256 initialAnchor, uint80 lnFeeRateRoot)
         external
         returns (address market)
@@ -70,8 +116,16 @@ contract PendleMarketFactoryLocal is IPMarketFactory {
             revert Errors.MarketFactoryInitialAnchorTooLow(initialAnchor, minInitialAnchor);
         }
 
-        market = address(
-            new PendleMarketV6Local(PT, scalarRoot, initialAnchor, lnFeeRateRoot)
+        // LOCAL: abi.encode WITHOUT vePendle, gaugeController
+        // This matches PendleMarketV6Local constructor: (PT, scalarRoot, initialAnchor, lnFeeRateRoot)
+        market = BaseSplitCodeFactory._create2(
+            0,
+            bytes32(block.chainid),
+            abi.encode(PT, scalarRoot, initialAnchor, lnFeeRateRoot),
+            marketCreationCodeContractA,
+            marketCreationCodeSizeA,
+            marketCreationCodeContractB,
+            marketCreationCodeSizeB
         );
 
         markets[PT][scalarRoot][initialAnchor][lnFeeRateRoot] = market;
@@ -90,6 +144,7 @@ contract PendleMarketFactoryLocal is IPMarketFactory {
         _overriddenFee = overriddenFee[router][market];
     }
 
+    /// @dev for gas-efficient verification of market
     function isValidMarket(address market) external view returns (bool) {
         return allMarkets.contains(market);
     }
@@ -112,6 +167,7 @@ contract PendleMarketFactoryLocal is IPMarketFactory {
         uint80 marketFee = IPMarket(market).getNonOverrideLnFeeRateRoot();
         if (newFee >= marketFee) revert Errors.MarketFactoryOverriddenFeeTooHigh(newFee, marketFee);
 
+        // NOTE: newFee = 0 allowed !!
         overriddenFee[router][market] = newFee;
         emit SetOverriddenFee(router, market, newFee);
     }
